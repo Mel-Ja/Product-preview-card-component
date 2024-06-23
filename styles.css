@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,700,0..100;1,9..144,700,0..100&display=swap');
+:root {
+    --cyan: hsl(158, 36%, 37%);
+    --dark-cyan: hsl(158, 37%, 22%);
+    --cream: hsl(30, 39%, 92%);
+    --dark-blue: hsl(212, 21%, 14%);
+    --dark-gray-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+.btn {
+    border: none;
+    padding: .8rem 1rem;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+
+
+}
+.btn--main {
+    background-color: var(--cyan);
+    color: var(--white);
+    border-radius: .5rem;
+    width: 100%;
+
+    transition: all 150ms ease;
+}
+.btn--main:hover {
+    background-color: var(--dark-cyan);
+}
+
+.image {
+    max-width: 100%;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.main {
+    background-color: var(--cream);
+    min-height: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.producto {
+    margin-top: 2rem;
+    background-color: var(--white);
+    width: 650px;
+    max-width: 90%;
+    height: 60%;
+    border-radius: 1rem;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.producto__content {
+    padding: 1.8rem 2rem;
+}
+
+.producto__content > * + * {
+    margin-top: 1rem;
+}
+
+.producto__categorie{
+    color: var(--dark-gray-blue);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.producto__title, .producto__price--main {
+    font-family: "Fraunces", serif;
+}
+
+.producto__title{
+    color: var(--dark-blue);
+    font-size: 2.2em;
+    line-height: 1;
+}
+
+.producto__description{
+    color: var(--dark-gray-blue);
+}
+
+
+.producto__prices{
+    display: flex;
+    align-items: center;
+    gap:  0 1rem;
+    flex-wrap: wrap ;
+}
+
+.producto__price--main{
+    color: var(--cyan);
+    font-size: 2.5rem;
+}
+
+.producto__price--secondary{
+    text-decoration: line-through;
+    color: var(--dark-gray-blue);
+    font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+    .main{
+        align-items: center;
+    }
+
+    .producto {
+        flex-direction: row;
+    }
+
+    .producto__picture {
+        flex: 1; /* Ensure picture takes up equal space */
+    }
+
+    .image {
+        border-radius: 1rem 0 0 1rem; /* Adjust border radius for the image */
+        width: 100%; /* Ensure the image covers the entire flex item */
+        height: 100%; /* Ensure the image covers the entire flex item */
+        object-fit: cover; /* Cover the entire area without leaving gaps */
+    }
+
+    .producto__content {
+        flex: 1; /* Ensure content takes up equal space */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+}
